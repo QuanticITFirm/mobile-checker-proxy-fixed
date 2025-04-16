@@ -21,6 +21,8 @@ export default async function handler(req, res) {
 
     const html = await response.text();
     res.setHeader("Content-Type", "text/html");
+res.setHeader("Access-Control-Allow-Origin", "*");
+res.setHeader("Access-Control-Allow-Headers", "*");
     res.send(html);
   } catch (err) {
     console.error("Proxy error:", err);
